@@ -18,12 +18,3 @@ resourcePolicy:
       condition:
         match:
           expr: request.resource.attr.public == true
-
-    - actions: ['comment']
-      effect: EFFECT_ALLOW
-      roles:
-        - user
-      condition:
-        match:
-          expr: request.resource.attr.owner != request.principal.id &&
-                request.resource.attr.public == true
